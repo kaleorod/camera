@@ -1,0 +1,53 @@
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+                                            <!-- author -->
+<meta name="author" content="watora">
+                                            <!-- page title -->
+<title>Welcome</title>
+                                            <!-- favicon -->
+<link rel="shortcut icon" href="img/favi.png" type="image/ico">
+                                            <!-- css -->
+                                            <!-- js -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+                                        <!-- responsive  -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+                                          <!-- fonts -->
+<link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+</head>
+<body>
+
+<img alt="Webcam image of something popular" id="camera1" src="http://81.193.14.78:90/image.jpg?" width="640" height="480" />
+
+<img alt="Webcam image of something popular" id="camera2" src="http://81.193.14.78:91/image.jpg?" width="640" height="480" />
+
+
+<script type="text/javascript">
+(function() {
+    setInterval(function() {
+        var myImageElement = document.getElementById('camera2');
+        
+        var d = new Date();
+        // 6000 is 6 seconds; the desired refresh rate
+        // % n is a bit of an experiment for being nice on cache invalidation; it also puts a bound on how out-of-date something would be regarding clock skew.
+        var timeSlice = Math.floor(d.getTime() / 1000) ;
+        myImageElement.src = 'http://81.193.14.78:91/image.jpg?' + timeSlice;
+    }, 1000);
+}());
+</script>
+
+<script type="text/javascript">
+(function() {
+    setInterval(function() {
+        var myImageElement = document.getElementById('camera1');
+        
+        var d = new Date();
+        // 6000 is 6 seconds; the desired refresh rate
+        // % n is a bit of an experiment for being nice on cache invalidation; it also puts a bound on how out-of-date something would be regarding clock skew.
+        var timeSlice = Math.floor(d.getTime() / 1000) ;
+        myImageElement.src = 'http://81.193.14.78:90/image.jpg?' + timeSlice;
+    }, 1000);
+}());
+</script>
+
+</body>
